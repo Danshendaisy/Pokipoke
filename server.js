@@ -4,10 +4,7 @@ const dbRoutes = require('./routes/databaseAccess.js');
 const bodyParser = require('body-parser');
 const session = require('express-session')
 // const path = require('path');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
+//const logger = require('morgan');
 const MongoStore = require('connect-mongo')(session);
 // // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +29,7 @@ const app = express();
 app.use(express.static('build'));
 app.use('/db', dbRoutes);
 app.use(bodyParser.json());
-app.use(logger('dev'));
+//app.use(logger('dev'));
 
 // Session info here
 
