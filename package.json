@@ -1,7 +1,10 @@
 {
   "name": "studycardsbackend",
   "version": "1.0.0",
-  "engines": {"node":"8.11.2"},
+  "engines": {
+    "node":"8.11.2",
+    "npm":"5.6.0"
+  },
   "description": "",
   "main": "server.js",
   
