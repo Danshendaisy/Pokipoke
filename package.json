@@ -1,8 +1,10 @@
 {
   "name": "studycardsbackend",
   "version": "1.0.0",
+  "engines": {"node":"8.11.2"},
   "description": "",
   "main": "server.js",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node_modules/babel-cli/bin/babel.js ./ --source-maps --out-dir dist",
