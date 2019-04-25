@@ -6,6 +6,9 @@ const session = require('express-session')
 // const path = require('path');
 //const logger = require('morgan');
 const MongoStore = require('connect-mongo')(session);
+
+const PORT = process.env.PORT || 3000;
+
 // // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'hbs');
@@ -26,7 +29,7 @@ const app = express();
 //const router = Router();
 
 // MIDDLEWARE
-app.use(express.static('build'));
+//app.use(express.static('build'));
 app.use('/db', dbRoutes);
 app.use(bodyParser.json());
 //app.use(logger('dev'));
@@ -50,7 +53,12 @@ app.use(function(req, res, next) {
   next(err);
 });
 // launch server on port 3000
-const server = app.listen(3000, () => {
+// const server = app.listen(3000, () => {
+//   const { address, port } = server.address();
+//   console.log(`Listening at http://${port}`);
+
+const server = app.listen(PORT, () => {
   const { address, port } = server.address();
-  console.log(`Listening at http://${port}`);
+  console.log(`Listening at http://localhost:${port}`);
 })
+
