@@ -2,25 +2,25 @@ const mongoose = require('mongoose');
 const { Schema } = require('mongoose');
 
 const foodSchema = new Schema({
-    Id:{
+    id:{
         type: Number
     },
-    Seller:{
+    seller:{
         type:String
     },
-    Name:{
+    name:{
         type:String
     },
-    Price:{
+    price:{
         type:Number
     },
-    Quantity:{
+    quantity:{
         type:Number
     },
-    Description:{
+    description:{
         type:String
     },
-    PlaceToMeet:{
+    placeToMeet:{
         type:String
     },
     image:{

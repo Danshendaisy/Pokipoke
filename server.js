@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const dbRoutes = require('./routes/databaseAccess.js');
 const bodyParser = require('body-parser');
@@ -26,12 +27,15 @@ mongoose.connection.on('error', console.error);
 
 // initialize http server
 const app = express();
+
 //const router = Router();
 
 // MIDDLEWARE
 //app.use(express.static('build'));
+app.use(cors())
 app.use('/db', dbRoutes);
 app.use(bodyParser.json());
+
 //app.use(logger('dev'));
 
 // Session info here

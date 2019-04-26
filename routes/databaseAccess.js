@@ -8,13 +8,13 @@ router.use(bodyParser.json());
 
 router.post('/food', (req, res) => {
   const newFood = new Food({
-    Id: req.body.Id,
-    Seller: req.body.Seller,
-    Name:req.body.Name,
-    Price:req.body.Price,
-    Quantity:req.body.Quantity,
-    Description:req.body.Description,
-    PlaceToMeet:req.body.PlaceToMeet,
+    id: req.body.id,
+    seller: req.body.seller,
+    name:req.body.name,
+    price:req.body.price,
+    quantity:req.body.quantity,
+    description:req.body.description,
+    placeToMeet:req.body.placeToMeet,
     image:req.body.image
   })
   newFood.save()
@@ -34,6 +34,16 @@ router.get('/food', (req, res, next) => {
     res.json(food)
   })
 
+// router.get('/food/:name', (req,res,next)=>{
+//   Food.find({name:req.param.name}).exec((err,food)=>{
+//     if(err) return next(err);
+//     res.json(food)
+//   })
+//   })
+})
+
+
+
   //
   // a.filter( x => {
   //     if (!c.hasOwnProperty(x.a)){
@@ -42,7 +52,7 @@ router.get('/food', (req, res, next) => {
   //     }
   //     return false;
   // });
-})
+
 
 
 
